@@ -349,6 +349,25 @@ impl Func {
         }
     }
 
+    /// Calls the function with the given context and arguments (method access).
+    #[func]
+    pub fn call_(
+        self,
+        /// The engine.
+        engine: &mut Engine,
+        /// The callsite context.
+        context: Tracked<Context>,
+        /// The real arguments (the other argument is just for the docs).
+        /// The docs argument cannot be called `args`.
+        args: &mut Args,
+        /// The arguments to apply to the function.
+        #[external]
+        #[variadic]
+        arguments: Vec<Value>,
+    ) -> SourceResult<Value> {
+        self.call_impl(engine, context, args.take())
+    }
+
     /// Returns a selector that filters for elements belonging to this function
     /// whose fields have the values of the given arguments.
     ///
