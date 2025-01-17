@@ -17,6 +17,11 @@ name = "typst"
 path = "src/main.rs"
 doc = false
 
+[[lib]]
+name = "typst"
+path = "src/main.rs"
+doc = false
+
 [dependencies]
 typst = { workspace = true }
 typst-assets = { workspace = true, features = ["fonts"] }
