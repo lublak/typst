@@ -12,14 +12,9 @@ repository = { workspace = true }
 license = { workspace = true }
 readme = { workspace = true }
 
-[[bin]]
-name = "typst"
-path = "src/main.rs"
-doc = false
-
 [lib]
 name = "typst"
-path = "src/main.rs"
+path = "src/lib.rs"
 
 [dependencies]
 typst = { workspace = true }
